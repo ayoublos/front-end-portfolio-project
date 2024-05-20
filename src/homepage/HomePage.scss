@@ -1,0 +1,13 @@
+.homepage-container{
+    // background-color: turquoise;
+    height: 70vw;
+    width: 70vw;
+    transform: translate(15vw,5vw);
+    border-radius: 1vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 1vw;
+
+    
+}

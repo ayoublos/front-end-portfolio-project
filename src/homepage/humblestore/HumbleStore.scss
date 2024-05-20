@@ -1,0 +1,62 @@
+.humblestore-container{
+    color: black;
+    grid-column: 2/2;
+    border:3px solid red;
+    grid-row: 1/2;
+    // margin: 1vw 2vw;
+    border-radius: 0.5vw;
+    background-color: white;
+    img{
+        grid-column: 1/6;
+        height: 10vw;
+        width: 100%;
+        
+    }
+    li{
+        
+        display: grid;
+        list-style: none;
+        margin-left: -2vw;
+        font-size:0.7vw;
+        height: 3vw;
+        grid-template-columns: 4fr 1fr 1fr;
+        padding: 0vw 2vw;
+
+        .normalprice{
+            text-decoration: line-through;
+            margin-left: 0.8vw;
+            color: gray;
+            font-size: 1vw;
+
+
+        }
+        .saleprice{
+            height:1vw ;
+            width: 3vw;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 0.3vw 1vw;
+            border-radius: 0.6vw;
+            margin-left: 0.8vw;
+            font-size: 0.9vw;
+
+        }
+        .gametitle{
+            text-decoration: underline;
+            font-size: 1vw;
+        }
+        
+
+    }
+    .humblestore-button{
+        padding: 0vw 3vw;
+        background-color: orange;
+        color: black;
+        border-radius: 1vw;
+        height: 2.7vw;
+        margin-left: 11vw;
+        margin-top: 2vw;
+
+    }
+}

@@ -1,0 +1,71 @@
+.gamelist-container{
+    background-color: white;
+    width: 80vw;
+    transform: translate(10vw,5vw);
+    border-radius: 1vw;
+
+    table {
+        // border-collapse: collapse;
+        transform: translate(1vw,10vw);
+        
+
+        .store,.savings,.price,.deal-rating,.reviews,.recent{
+            text-align: center;
+
+            width: 6vw;height: 0.2vw;}
+            .reviews{
+                width: 5vw;
+            }
+            .release{
+                text-align: center;
+    
+                width: 9vw;height: 0.2vw;}
+        .title{
+            text-align: center;
+            width: 25vw;height: 0.1vw;
+        }
+
+        th {
+
+            border: 1px solid white;
+            padding: 8px;
+            text-align: left;
+            color: white;
+            background-color: #2a2b2e;
+            transform: translate(5vw 10vw);
+           
+          }
+          td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            img{
+                height: 1vw;
+            }
+        }
+        .store-cell,.price-cell,.dealrating-cell,.reviews-cell,.savings-cell{
+            text-align: center;
+
+        }
+        .normalprice-cell{
+            text-decoration: line-through;
+            color:red;
+            font-size: 1vw;
+        }
+        .saleprice-cell{
+            color:green;
+            font-size: 1vw;
+        }
+        .titlecell-img{
+            height: 3vw;
+            vertical-align: middle;
+            margin-right: 1vw;
+        }
+       
+
+      }
+    
+    
+    
+td{text-align: center;}
+}

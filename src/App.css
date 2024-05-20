@@ -1,0 +1,17 @@
+main{
+  
+  hr{
+    margin-top: 1.5vw;
+    width: 27vw;
+  }
+  .top-deals{
+    margin-left: 37vw;
+    color: white;
+    img{
+      margin-right: 2vw;
+      height: 3vw;
+    }
+  }
+
+
+}

@@ -1,0 +1,25 @@
+.header-container{
+    .nav-container{
+        width: 100%;
+        color: white;
+        background-color:black;
+        height: 100px;
+        width: 90vw;
+        margin-left: 5vw;
+        display: flex;
+        justify-content: space-around;
+        h4{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+        }
+    
+    }
+    h4{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+    h2{
+        color: white;
+        font-size: 3vw;
+    }
+}

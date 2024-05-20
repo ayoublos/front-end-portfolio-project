@@ -1,7 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import './HumbleStore.scss' 
 
 export default function HumbleStore({humbleStoreList}){
-
+    let navigate=useNavigate()
     let firstFiveGames=humbleStoreList.slice(0,5)
     
         return (<div className="humblestore-container">
@@ -17,7 +18,7 @@ export default function HumbleStore({humbleStoreList}){
     
             </ul>
             <hr />
-            <button className='humblestore-button'>View All Steam Deals</button>
+            <button onClick={()=>navigate(`./humblestore2`)} className='humblestore-button'>View All Humble Store Deals</button>
     
         </div>)
     }

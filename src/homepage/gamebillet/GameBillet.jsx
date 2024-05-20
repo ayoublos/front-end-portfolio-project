@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './GameBillet.scss'
+import { useState } from 'react'
 export default function GameBillet({gameBilletList}){
 
 let firstFiveGames=gameBilletList.slice(0,5)
-
+let navigate=useNavigate()
     return (<div className="gamebillet-container">
         <img src="https://cdn.gadevo.com/images/lojas/gamebillet.png" alt="" />
         <ul>
@@ -17,7 +18,7 @@ let firstFiveGames=gameBilletList.slice(0,5)
 
         </ul>
         <hr />
-        <button className='gamebillet-button'><p>View All Steam Deals</p></button>
+        <button onClick={()=>navigate(`/gamebillet7`)} className='gamebillet-button'><p>View All Game Billet Deals</p></button>
 
     </div>)
 }

@@ -14,6 +14,7 @@ function App() {
   const [humbleStoreList, setHumbleStoreList] = useState([]);
   const [greenManList, setGreenManList] = useState([]);
   const [gameBilletList, setGameBilletList] = useState([]);
+  const[search,setSearch]=useState(``)
 
   let steamURL = `https://www.cheapshark.com/api/1.0/deals?storeID=1`;
   useEffect(() => {
@@ -58,21 +59,13 @@ function App() {
       });
   }, []);
 
-
+console.log(search)
   return (
     <>
       <main>
         <Router>
-          <Header />
-          <h1 className="top-deals">
-            {/* <span>
-              <img
-                src="https://media.istockphoto.com/id/1221544459/vector/cartoon-fire-flame-icon-emoticon-lit-fire-silhouette-sign-burn-fireball-emblem.jpg?s=612x612&w=0&k=20&c=zHSWv_sa-UQISgolE43rLYyZticMjXn-P4huTUEKVys="
-                alt=""
-              />
-            </span> */}
-            Top Deals by Store
-          </h1>
+          <Header setSearch={setSearch}search={search}/>
+          
           <Routes>
             <Route
               path="/"
@@ -86,7 +79,7 @@ function App() {
               }
             />
             <Route path="/:id" element={<GameList/>}/>
-          {/* <Route/>  */}
+          <Route/> 
           </Routes>
         </Router>
       </main>

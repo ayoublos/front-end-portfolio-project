@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './GreenManGaming.scss'
 export default function GreenManGaming({greenManList}){
 
 let firstFiveGames=greenManList.slice(0,5)
-
+let navigate=useNavigate()
     return (<div className="greenmangaming-container">
         <img src="https://www.greenmangaming.com/blog/wp-content/uploads/2017/08/gmglogo_BlogBanner-890x606.jpg" alt="" />
         <ul>
@@ -17,7 +17,7 @@ let firstFiveGames=greenManList.slice(0,5)
 
         </ul>
         <hr />
-        <button className='greenmangaming-button'><p>View All Steam Deals</p></button>
+        <button onClick={()=>navigate(`/greenmangaming3`)} className='greenmangaming-button'><p>View All GMG Deals</p></button>
 
     </div>)
 }

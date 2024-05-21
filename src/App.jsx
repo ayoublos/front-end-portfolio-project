@@ -8,13 +8,16 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "./header/Header";
+import SearchPage from "./searchpage/SearchPage";
 
 function App() {
   const [steamList, setSteamList] = useState([]);
   const [humbleStoreList, setHumbleStoreList] = useState([]);
   const [greenManList, setGreenManList] = useState([]);
   const [gameBilletList, setGameBilletList] = useState([]);
+  const[searchList,setSearchList]=useState([])
   const[search,setSearch]=useState(``)
+
 
   let steamURL = `https://www.cheapshark.com/api/1.0/deals?storeID=1`;
   useEffect(() => {
@@ -58,13 +61,16 @@ function App() {
         setGameBilletList(newList);
       });
   }, []);
+function getSearchList(){
 
-console.log(search)
+  fetch(`https://www.cheapshark.com/api/1.0/games?title=${search}`).then(res=>res.json()).then(res=>setSearchList(...res))}
+
+
   return (
     <>
       <main>
         <Router>
-          <Header setSearch={setSearch}search={search}/>
+          <Header getSearchList={getSearchList} setSearch={setSearch}/>
           
           <Routes>
             <Route
@@ -79,7 +85,7 @@ console.log(search)
               }
             />
             <Route path="/:id" element={<GameList/>}/>
-          <Route/> 
+          <Route path="/search" element={<SearchPage searchList={searchList}/>}/> 
           </Routes>
         </Router>
       </main>

@@ -1,11 +1,12 @@
 .greenmangaming-container{
+    border: 2px solid gray;
     color: black;
     grid-column: 1/2;
     grid-row: 2/2;
     // margin: 1vw 2vw;
     border-radius: 0.5vw;
     background-color: white;
-    border-radius: 1vw;
+    // border-radius: 1vw;
 
     img{
         grid-column: 1/6;
@@ -54,10 +55,14 @@
         padding: 0vw 3vw;
         background-color: orange;
         color: black;
-        border-radius: 1vw;
+        // border-radius: 1vw;
         height: 2.7vw;
-        margin-left: 10vw;
+        margin-left: 7.5vw;
         margin-top: 1vw;
+        border-radius: 3vw;
+        margin-left: 6.5vw;
+        width: 18vw;
+        padding-bottom: 3vw;
 
     }
 

@@ -1,8 +1,128 @@
 .searchpage-container{
     background-color: white;
-    width: 80vw;
-    transform: translate(10vw,5vw);
+    width: 70vw;
+    transform: translate(12vw,15vw);
     border-radius: 1vw;
+    padding : 1vw;
     overflow: scroll;
+    // padding-right: 7vw;
+    
+
+    .main-list{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        padding: 5vw;
+        padding-left: 0vw;
+        padding-right: 7vw;
+        padding-bottom: 5vw;
+        gap: 2vw;
+        .firstlist-element{
+            position: relative;
+        }
+        
+
+
+        h1{
+            color: red;
+            
+            font-size: 5vw;
+            transform: translate(10vw,5vw);
+    
+        }
+
+        li{
+            list-style: none;
+        }
+            
+       
+          
+           
+        
+             .image-container{
+                text-wrap: wrap;
+                background-color: lightgray;
+                margin-bottom: 3vw;
+                
+                // height: 15vw;
+                padding-top: 1vw;
+                transform: translate(4vw,0vw);
+                border: 2px solid red;
+                // overflow: scroll;
+
+
+
+
+                .thumb{
+                    height: 4vw;
+                    width: 8vw;
+                    transform: translate(5.4vw,0vw);
+                }
+                .storeID{height: 1.4vw;
+                width: 3vw;
+                transform: translate(0.2vw,0.3vw);
+            }
+            hr{
+                width:15vw;
+            }
+                
+
+                
+            }
+         
+            .name-container{
+                margin-top: 0.7vw;
+                background-color: white;
+                height: 4vw;
+                text-align: center;
+                padding-top: 1vw;
+                span{color: green;}
+            }
+            .showgames{
+                height: 1.4vw;
+                width:1.4vw;
+                border-radius: 10vw;
+                color:white;
+                background-color: coral;
+                margin-left: 1vw;
+                // transform: translate(6vw,0vw);
+                font-weight: 900;
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 1vw;
+                border: none;
+                // vertical-align: middle;
+                
+
+
+            }
+            .secondlist-item{
+                grid-column: span 1;
+            list-style: none;
+            margin: 1vw;
+            
+            height: 4vw;
+            span{
+                margin-left: 3vw;
+                font-size: 1vw;
+            }
+            // transform: translate(3vw,4vw);
+                
+                // display: none;
+            }
+            .second-list{
+                background-color: red;
+                margin: 1vw;
+                padding: 1vw;
+                margin-bottom: 3vw;
+                transform: translate(0vw,-6vw);
+                // overflow: hidden;
+                // position:absolute;
+
+            }
+    }
+   
+ 
     
 }

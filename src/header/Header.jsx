@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import Search from "../search/Search";
+import { all } from "axios";
 
-export default function Header({getSearchList,setSearch}) {
+export default function Header({setReduceList,getSearchList,setSearch,search,allGames,setMainSearch}) {
 
 
   return (
@@ -15,7 +16,7 @@ export default function Header({getSearchList,setSearch}) {
         </Link>
         <h3>Home</h3>
         <h3>About</h3>
-        <Search getSearchList={getSearchList} setSearch={setSearch}/>
+        <Search setReduceList={setReduceList}setMainSearch={setMainSearch} getSearchList={getSearchList} setSearch={setSearch}search={search}allGames={allGames}/>
       </div>
     </div>
   );

@@ -1,14 +1,67 @@
-import { Link } from 'react-router-dom'
-import './SearchPage.scss'
-export default function SearchPage({searchList}){
-    console.log(searchList)
-    return (
-        <div className="searchpage-container">
-            {/* <ul>
-                {searchList.map(el=><li>
-                    {el.title}
-                </li>)}
-            </ul> */}
-        </div>
-    )
+import { useState } from "react";
+import "./SearchPage.scss";
+export default function SearchPage({ reducedList, mainSearch, search ,showGames,setShowGames}) {
+    const[title,setTitle]=useState(null)
+  let list = [
+    ``,
+    `https://assetsio.gnwcdn.com/steam-logo_pAVUl5r.png?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp`,
+    `https://cdn.humblebundle.com/static/hashed/ae004602956f47425ecc0edaf72e710b8a4bb812.png`,
+    `https://www.greenmangaming.com/blog/wp-content/uploads/2017/08/gmglogo_BlogBanner-890x606.jpg`,
+
+    ``,
+    ``,
+    ``,
+    `https://nogameb.com/wp-content/uploads/gamebillet.jpg`,
+  ];
+function toggleModal(title){
+    setShowGames(!showGames)
+    setTitle(title)
+
+}
+  console.log(mainSearch);
+  return (
+    <div className="searchpage-container">
+      <ul className="main-list">
+        {...reducedList.map((el) => (
+          <li className="firstlist-element">
+            <div name={el.title} className="image-container">
+              <img className="thumb" src={el.thumb} alt="" />
+              <br />
+              
+              <div className="name-container">{el.title}
+              <button  onClick={()=>{
+             toggleModal(el.title)
+             if(el.title!==title){
+                setShowGames(true)
+
+              }
+                
+              
+
+              }} className="showgames" >{showGames&&title===el.title?`-`:`+`}</button>
+
+              <br />
+              <br /><span>($ {el.salePrice} and up)</span></div>
+              <div> {mainSearch
+                  .filter((element) => element.title === el.title)
+                  .map((element) => (showGames&&title===element.title?
+                    <div  className="secondlist-item">
+                      <img
+                        className="storeID"
+                        src={list[element.storeID]}
+                        alt=""
+                      />{" "}
+                      <span>${element.normalPrice}</span>
+                    </div>:null
+                  ))}</div>
+
+
+
+           
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

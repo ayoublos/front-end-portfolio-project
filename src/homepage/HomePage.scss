@@ -1,13 +1,18 @@
+h1{
+    transform: translate(40vw,7vw);
+}
 .homepage-container{
-    // background-color: turquoise;
+    background-color: white;
+    padding: 2vw;
     height: 70vw;
-    width: 70vw;
-    transform: translate(15vw,5vw);
+    width: 60vw;
+    transform: translate(18vw,12vw);
     border-radius: 1vw;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
     gap: 1vw;
+    margin-bottom: 7vw;
 
     
 }

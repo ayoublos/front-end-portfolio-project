@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./GameList.scss";
+import GameListSearchBar from "./GameListSearchBar.jsx/GameListSearchBar";
 export default function GameList() {
   const [tableList, setTableList] = useState([]);
   const [image, setImage] = useState(``);
@@ -8,6 +9,9 @@ export default function GameList() {
   const [rating, setRating] = useState(false);
   const [title, setTitle] = useState(false);
   const [price, setPrice] = useState(false);
+  const [date, setDate] = useState(false);
+  const[initialList,setInitialList]=useState([])
+  const [gameListSearchWord, setGameListSearchWord] = useState(``);
   const { id } = useParams();
 
   let list = [
@@ -25,28 +29,30 @@ export default function GameList() {
   let URL = `https://www.cheapshark.com/api/1.0/deals?storeID=${
     id[id.length - 1]
   }`;
+  // useEffect(() => {
+  //   fetch(URL)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       let newList = structuredClone(res);
+  //       setTableList(newList);
+  //       setInitialList(newList)
+
+  //       setImage(list[id[id.length - 1]])
+  //     });
+  // }, [gameListSearchWord]);
   useEffect(() => {
     fetch(URL)
       .then((res) => res.json())
       .then((res) => {
         let newList = structuredClone(res);
         setTableList(newList);
-        setImage(list[id[id.length - 1]]);
-      });
-  }, [id[id.length - 1]]);
-  useEffect(() => {
-    fetch(URL)
-      .then((res) => res.json())
-      .then((res) => {
-        let newList = structuredClone(res);
-        setTableList(newList);
+        setInitialList(newList)
         setImage(list[id[id.length - 1]]);
       });
   }, [id[id.length - 1]]);
 
   function filterSavings() {
     const filteredList = tableList.map((el) => el);
-    console.log(savings);
     if (savings) {
       filteredList.sort((a, b) => a[`savings`] - b[`savings`]);
     } else {
@@ -56,7 +62,6 @@ export default function GameList() {
   }
   function filterRating() {
     const filteredList = tableList.map((el) => el);
-    console.log(rating);
     if (rating) {
       filteredList.sort((a, b) => a[`dealRating`] - b[`dealRating`]);
     } else {
@@ -73,6 +78,16 @@ export default function GameList() {
     }
     setTableList(filteredList);
   }
+  function filterDate() {
+    const filteredList = tableList.map((el) => el);
+    if (date) {
+      filteredList.sort((a, b) => new Date(a.releaseDate*1000) - new Date(b.releaseDate*1000));
+    } else {
+      filteredList.sort((a, b) => new Date(b.releaseDate*1000)- new Date(a.releaseDate*1000));
+    }
+    setTableList(filteredList);
+  }
+
   function filterTitle() {
     const filteredList = tableList.map((el) => el);
     if (title) {
@@ -91,15 +106,18 @@ export default function GameList() {
     }
     setTableList(filteredList);
   }
-  let url;
-  if (id[id.length - 1] === `1`) {
-    url = `https://store.steampowered.com/app`;
-  }
 
-  console.log(id);
+  function filterGameList(searchWord,gameList){
+    return gameList.filter(el=>el.title.toLowerCase().match(searchWord.toLowerCase()))
+  }
+  var months = ["January", "February", "March", "April", "May", "June", "July",
+         "August", "September", "October", "November", "December"];
+
+
   return (
     <div className="gamelist-container">
-      <table>
+      <GameListSearchBar gameListSearchWord={gameListSearchWord} setTableList={setTableList} tableList={tableList} initialList={initialList} filterGameList={filterGameList} setGameListSearchWord={setGameListSearchWord}/>
+      <table >
         <thead>
           <tr>
             <th className="store">Store</th>
@@ -139,13 +157,15 @@ export default function GameList() {
             >
               Deal Rating
             </th>
-            <th className="release">Release</th>
+            <th className="release" onClick={()=>filterDate(
+              setDate(!date)
+            )}>Release</th>
             <th className="reviews">Reviews</th>
           </tr>
         </thead>
         <tbody>
           {...tableList.map((el) => (
-            <tr className="cells">
+            <tr className="cells" >
               <td className="store-cell">
                 <img src={image} alt="" />
               </td>
@@ -160,13 +180,7 @@ export default function GameList() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={
-                    url +
-                    `/` +
-                    el.steamAppID +
-                    `/</td>` +
-                    el.dealID
-                  }
+                  href={`https://www.cheapshark.com/redirect?dealID=${el.dealID}`}
                 >
                   {el.title.length > 34
                     ? el.title.slice(0, 34) + `...`
@@ -174,7 +188,8 @@ export default function GameList() {
                 </a>
               </td>
               <td className="dealrating-cell">{el.dealRating}</td>
-              <td className="release-cell">{}</td>
+              <td className="release-cell">{months[new Date(el.releaseDate*1000).getMonth()]} {new Date(el.releaseDate*1000).getDate()}, {new Date(el.releaseDate*1000).getFullYear()}</td>
+
               <td className="reviews-cell"></td>
             </tr>
           ))}

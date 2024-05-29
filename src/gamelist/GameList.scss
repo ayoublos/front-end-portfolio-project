@@ -1,9 +1,11 @@
 .gamelist-container{
     background-color: white;
     width: 80vw;
-    transform: translate(10vw,5vw);
+    transform: translate(10vw,15vw);
     border-radius: 1vw;
     overflow: scroll;
+    padding-bottom: 10vw;
+    margin-bottom: 10vw;
 
     table {
         border-collapse: collapse;
@@ -12,7 +14,7 @@
         margin-bottom: 10vw;
         .cells:hover{
             background-color: lightcoral;
-                transform: scale(1.05); /* Increase size by 10% */
+                transform: scale(1.05);
 
         }
 

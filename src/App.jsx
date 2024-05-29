@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import HomePage from "./homepage/HomePage";
 import GameList from "./gamelist/GameList";
+import PageNotFound from './pagenotfound/PageNotFound'
 
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -15,9 +16,12 @@ function App() {
   const [humbleStoreList, setHumbleStoreList] = useState([]);
   const [greenManList, setGreenManList] = useState([]);
   const [gameBilletList, setGameBilletList] = useState([]);
-  const[searchList,setSearchList]=useState([])
-  const[search,setSearch]=useState(``)
+  const [searchList, setSearchList] = useState([]);
+  const [mainSearch, setMainSearch] = useState([]);
+  const [reducedList, setReduceList] = useState([]);
+  const [showGames, setShowGames] = useState(false);
 
+  const [search, setSearch] = useState(``);
 
   let steamURL = `https://www.cheapshark.com/api/1.0/deals?storeID=1`;
   useEffect(() => {
@@ -61,17 +65,31 @@ function App() {
         setGameBilletList(newList);
       });
   }, []);
-function getSearchList(){
+  ``;
+  let allGames = steamList
+    .concat(greenManList)
+    .concat(humbleStoreList)
+    .concat(gameBilletList);
 
-  fetch(`https://www.cheapshark.com/api/1.0/games?title=${search}`).then(res=>res.json()).then(res=>setSearchList(...res))}
-
+  function getSearchList(list, search) {
+    return list.filter((el) =>
+      el.title.toLowerCase().match(search.toLowerCase())
+    );
+  }
 
   return (
     <>
       <main>
         <Router>
-          <Header getSearchList={getSearchList} setSearch={setSearch}/>
-          
+          <Header
+            setReduceList={setReduceList}
+            setMainSearch={setMainSearch}
+            getSearchList={getSearchList}
+            setSearch={setSearch}
+            search={search}
+            allGames={allGames}
+          />
+
           <Routes>
             <Route
               path="/"
@@ -84,8 +102,21 @@ function getSearchList(){
                 />
               }
             />
-            <Route path="/:id" element={<GameList/>}/>
-          <Route path="/search" element={<SearchPage searchList={searchList}/>}/> 
+            <Route path="/*" element={<PageNotFound />} />
+
+            <Route path="/:id" element={<GameList />} />
+            <Route
+              path="/search"
+              element={
+                <SearchPage
+                  showGames={showGames}
+                  setShowGames={setShowGames}
+                  reducedList={reducedList}
+                  mainSearch={mainSearch}
+                  search={search}
+                />
+              }
+            />
           </Routes>
         </Router>
       </main>

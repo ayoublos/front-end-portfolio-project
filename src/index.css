@@ -1,4 +1,5 @@
 body{
   background-image: url('https://static.bandainamcoent.eu/high/tekken/tekken-8/00-page-setup/TEKKEN8_Header_mobile_2.jpg');
+  background-size: contain;
 
 }

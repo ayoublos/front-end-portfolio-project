@@ -15,9 +15,7 @@ export default function GameListSearchBar({gameListSearchWord,setTableList,table
 
     }
     function handleSubmit(e){
-        console.log(gameListSearchWord)
         e.preventDefault()
-        // console.log(filterGameList())
         let result=gameListSearchWord.length?filterGameList(gameListSearchWord,initialList):initialList;
         setTableList(result)
 

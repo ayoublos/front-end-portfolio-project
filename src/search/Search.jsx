@@ -3,7 +3,7 @@ import "./Search.scss";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Search({ setReduceList,setSearch,getSearchList,search,allGames,setMainSearch }) {
+export default function Search({ setReducedList,setSearch,getSearchList,search,allGames,setMainSearch }) {
 
   const [emptyList,setEmptylist]=useState([])
   function reduceListToEachElementOnce(array) {
@@ -33,7 +33,7 @@ export default function Search({ setReduceList,setSearch,getSearchList,search,al
      
 
       setMainSearch( result)
-      setReduceList(reduceListToEachElementOnce(result))
+      setReducedList(reduceListToEachElementOnce(result))
    
       navigate(`./search`)}
   

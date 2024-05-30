@@ -2,24 +2,42 @@
     .nav-container{
         width: 100%;
         color: white;
-        background-color:black;
-        height: 100px;
-        width: 90vw;
-        margin-left: 5vw;
+        background-color:#333333;
+        height: 10vw;
+        margin: 0px;
+        margin-top: -1vw;
+        margin-left: -1vw;
+        width: 101vw;
+
         display: flex;
         justify-content: space-around;
-        h4{
+
+        h3{
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-align: center;
+            font-size: 2vw;
+            margin-top: 4vw;
+            color: white;
+            // font-size: 3vw;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                text-align: center;
+                text-decoration: underline;
+                text-decoration-color: #333333;
+
+
         }
     
     }
-    h4{
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        text-align: center;
-    }
-    h2{
+    
+    .title{
+        text-decoration: underline;
+        margin-top: 3vw;
+        
+
         color: white;
         font-size: 3vw;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            text-decoration-color: #333333;
     }
 }

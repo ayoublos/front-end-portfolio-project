@@ -10,7 +10,7 @@ export default function GameList() {
   const [title, setTitle] = useState(false);
   const [price, setPrice] = useState(false);
   const [date, setDate] = useState(false);
-  const[initialList,setInitialList]=useState([])
+  const [initialList, setInitialList] = useState([]);
   const [gameListSearchWord, setGameListSearchWord] = useState(``);
   const { id } = useParams();
 
@@ -46,7 +46,7 @@ export default function GameList() {
       .then((res) => {
         let newList = structuredClone(res);
         setTableList(newList);
-        setInitialList(newList)
+        setInitialList(newList);
         setImage(list[id[id.length - 1]]);
       });
   }, [id[id.length - 1]]);
@@ -81,9 +81,15 @@ export default function GameList() {
   function filterDate() {
     const filteredList = tableList.map((el) => el);
     if (date) {
-      filteredList.sort((a, b) => new Date(a.releaseDate*1000) - new Date(b.releaseDate*1000));
+      filteredList.sort(
+        (a, b) =>
+          new Date(a.releaseDate * 1000) - new Date(b.releaseDate * 1000)
+      );
     } else {
-      filteredList.sort((a, b) => new Date(b.releaseDate*1000)- new Date(a.releaseDate*1000));
+      filteredList.sort(
+        (a, b) =>
+          new Date(b.releaseDate * 1000) - new Date(a.releaseDate * 1000)
+      );
     }
     setTableList(filteredList);
   }
@@ -107,17 +113,37 @@ export default function GameList() {
     setTableList(filteredList);
   }
 
-  function filterGameList(searchWord,gameList){
-    return gameList.filter(el=>el.title.toLowerCase().match(searchWord.toLowerCase()))
+  function filterGameList(searchWord, gameList) {
+    return gameList.filter((el) =>
+      el.title.toLowerCase().match(searchWord.toLowerCase())
+    );
   }
-  var months = ["January", "February", "March", "April", "May", "June", "July",
-         "August", "September", "October", "November", "December"];
-
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   return (
     <div className="gamelist-container">
-      <GameListSearchBar gameListSearchWord={gameListSearchWord} setTableList={setTableList} tableList={tableList} initialList={initialList} filterGameList={filterGameList} setGameListSearchWord={setGameListSearchWord}/>
-      <table >
+      <GameListSearchBar
+        gameListSearchWord={gameListSearchWord}
+        setTableList={setTableList}
+        tableList={tableList}
+        initialList={initialList}
+        filterGameList={filterGameList}
+        setGameListSearchWord={setGameListSearchWord}
+      />
+      <table>
         <thead>
           <tr>
             <th className="store">Store</th>
@@ -157,15 +183,14 @@ export default function GameList() {
             >
               Deal Rating
             </th>
-            <th className="release" onClick={()=>filterDate(
-              setDate(!date)
-            )}>Release</th>
-            <th className="reviews">Reviews</th>
+            <th className="release" onClick={() => filterDate(setDate(!date))}>
+              Release
+            </th>
           </tr>
         </thead>
         <tbody>
           {...tableList.map((el) => (
-            <tr className="cells" >
+            <tr className="cells">
               <td className="store-cell">
                 <img src={image} alt="" />
               </td>
@@ -188,9 +213,11 @@ export default function GameList() {
                 </a>
               </td>
               <td className="dealrating-cell">{el.dealRating}</td>
-              <td className="release-cell">{months[new Date(el.releaseDate*1000).getMonth()]} {new Date(el.releaseDate*1000).getDate()}, {new Date(el.releaseDate*1000).getFullYear()}</td>
-
-              <td className="reviews-cell"></td>
+              <td className="release-cell">
+                {months[new Date(el.releaseDate * 1000).getMonth()]}{" "}
+                {new Date(el.releaseDate * 1000).getDate()},{" "}
+                {new Date(el.releaseDate * 1000).getFullYear()}
+              </td>
             </tr>
           ))}
         </tbody>

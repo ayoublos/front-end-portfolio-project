@@ -9,7 +9,7 @@ let navigate=useNavigate()
         <ul>
             {firstFiveGames.map(game=>
                 <a href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
-                    <li>           <p className='gametitle'>{game.title.length>10?game.title.slice(0,40)+`....`:game.title}</p>
+                    <li>           <p className='gametitle'>{game.title.length>30?game.title.slice(0,30)+`....`:game.title}</p>
                 <p className='normalprice'>${game.normalPrice}</p>
                 <div><p className='saleprice'>${game.salePrice}</p></div></li>
      
@@ -21,7 +21,7 @@ let navigate=useNavigate()
 
         </ul>
         <hr />
-        <button onClick={()=>navigate(`/gamebillet7`)} className='gamebillet-button'><p>View All Game Billet Deals</p></button>
+        <button onClick={()=>navigate(`/gamelist/gamebillet7`)} className='gamebillet-button'><p>View All Game Billet Deals</p></button>
 
     </div>)
 }

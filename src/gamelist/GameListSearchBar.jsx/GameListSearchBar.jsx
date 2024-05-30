@@ -27,7 +27,7 @@ export default function GameListSearchBar({gameListSearchWord,setTableList,table
     }
     return (<form className="gamelistsearchbar-container" onSubmit={handleSubmit} >
         <label htmlFor=""> 
-        <input value={gameListSearchWord} onChange={handleTextChange} className="gamelistsearchbar-input" type="text" />
+        <input placeholder="Search" value={gameListSearchWord} onChange={handleTextChange} className="gamelistsearchbar-input" type="text" />
         <button type="submit">Show</button>
 
         </label>

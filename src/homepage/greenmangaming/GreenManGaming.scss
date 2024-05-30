@@ -53,17 +53,30 @@
     }
     .greenmangaming-button{
         padding: 0vw 3vw;
-        background-color: orange;
+        background-color: lightblue;
         color: black;
-        // border-radius: 1vw;
+        border-radius: 1vw;
         height: 2.7vw;
-        margin-left: 7.5vw;
+        margin-left: 6vw;
+        margin-top: 1vw;
+        // padding-bottom: 3vw;
         margin-top: 1vw;
         border-radius: 3vw;
-        margin-left: 6.5vw;
-        width: 18vw;
-        padding-bottom: 3vw;
+        margin-left: 5.5vw;
+        width: 19vw;
+        padding-bottom: 1.5vw;
+        padding-top: 1.5vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1vw;
 
+    }
+    a{
+        color:black
+    }
+    a:hover{
+        color: rebeccapurple;
     }
 
 }

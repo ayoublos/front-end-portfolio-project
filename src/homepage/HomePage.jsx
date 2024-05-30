@@ -11,7 +11,7 @@ export default function HomePage({
 }) {
   return (
     <>
-    <h1> TOP DEALS BY STORE</h1>
+    <h1 className="heading"> TOP DEALS BY STORE</h1>
       <div className="homepage-container">
 
 <SteamPage steamList={steamList} />

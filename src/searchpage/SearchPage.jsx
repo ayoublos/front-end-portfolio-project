@@ -20,6 +20,7 @@ function toggleModal(title){
 }
   console.log(mainSearch);
   return (
+    reducedList?
     <div className="searchpage-container">
       <ul className="main-list">
         {...reducedList.map((el) => (
@@ -63,5 +64,7 @@ function toggleModal(title){
         ))}
       </ul>
     </div>
-  );
+  :<div className="searchpage-container">
+<p className="noresults">no results</p>
+  </div>);
 }

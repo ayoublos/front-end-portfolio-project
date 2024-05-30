@@ -1,10 +1,31 @@
 .PageNotFound {
     text-align: center;
     padding: 5em;
+    height: 30vw;
+    width: 50vw;
+    border-radius: 2vw;
+    overflow: scroll;
 
-    span {
+    // background-color: white;
+    transform: translate(20vw,5vw);
+    position:fixed;
+
+    h1 {
         display: block;
+        background-color: white;
         font-weight: 700;
+        color:red;
+        transform: translate(0.5vw,0vw);
+        border:3px solid red;
+        height: 11vw;
+        padding-top: 7vw;
+        border-radius: 2vw;
+        // position:fixed;
+
+
+        
+
+
     }
 
 }

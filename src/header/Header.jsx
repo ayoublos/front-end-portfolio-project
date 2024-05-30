@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Search from "../search/Search";
 import { all } from "axios";
 
-export default function Header({setReduceList,getSearchList,setSearch,search,allGames,setMainSearch}) {
+export default function Header({setReducedList,getSearchList,setSearch,search,allGames,setMainSearch}) {
 
 
   return (
@@ -12,11 +12,12 @@ export default function Header({setReduceList,getSearchList,setSearch,search,all
       <div className="nav-container">
         <Link to={`/`}>
           
-          <h2>Game Guru</h2>
+          <h2 className="title">Game Guru</h2>
         </Link>
-        <h3>Home</h3>
+        <Link to={'/'}><h3>Home</h3></Link>
+        
         <h3>About</h3>
-        <Search setReduceList={setReduceList}setMainSearch={setMainSearch} getSearchList={getSearchList} setSearch={setSearch}search={search}allGames={allGames}/>
+        <Search setReducedList={setReducedList}setMainSearch={setMainSearch} getSearchList={getSearchList} setSearch={setSearch}search={search}allGames={allGames}/>
       </div>
     </div>
   );

@@ -14,8 +14,8 @@ export default function SteamPage({ steamList }) {
           <a href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
             <li className="list-element">
               <p className="gametitle">
-                {game.title.length > 10
-                  ? game.title.slice(0, 40) + `....`
+                {game.title.length > 30
+                  ? game.title.slice(0, 30) + `....`
                   : game.title}
               </p>
               <p className="normalprice">${game.normalPrice}</p>
@@ -30,7 +30,7 @@ export default function SteamPage({ steamList }) {
       <button
         className="steam-button"
         onClick={() => {
-          navigate(`./steamlist1`);
+          navigate(`./gamelist/steamlist1`);
         }}
       >
         <p>View All Steam Deals</p>

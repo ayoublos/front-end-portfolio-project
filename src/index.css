@@ -1,5 +1,9 @@
 body{
-  background-image: url('https://static.bandainamcoent.eu/high/tekken/tekken-8/00-page-setup/TEKKEN8_Header_mobile_2.jpg');
-  background-size: contain;
+  /* background-image: url('https://static.bandainamcoent.eu/high/tekken/tekken-8/00-page-setup/TEKKEN8_Header_mobile_2.jpg'); */
+  background-image: url('https://wallpapers.com/images/hd/1280x720-gaming-hiera32hzi8ipfhg.jpg');
+  background-size: cover;
+  height: 105vw;
+
+
 
 }

@@ -16,8 +16,8 @@ export default function HumbleStore({ humbleStoreList }) {
           <a href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
             <li>
               <p className="gametitle">
-                {game.title.length > 10
-                  ? game.title.slice(0, 40) + `....`
+                {game.title.length > 30
+                  ? game.title.slice(0, 30) + `....`
                   : game.title}
               </p>
               <p className="normalprice">${game.normalPrice}</p>
@@ -30,7 +30,7 @@ export default function HumbleStore({ humbleStoreList }) {
       </ul>
       <hr />
       <button
-        onClick={() => navigate(`./humblestore2`)}
+        onClick={() => navigate(`./gamelist/humblestore2`)}
         className="humblestore-button"
       >
         View All Humble Store Deals

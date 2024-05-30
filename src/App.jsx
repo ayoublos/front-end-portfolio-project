@@ -18,7 +18,7 @@ function App() {
   const [gameBilletList, setGameBilletList] = useState([]);
   const [searchList, setSearchList] = useState([]);
   const [mainSearch, setMainSearch] = useState([]);
-  const [reducedList, setReduceList] = useState([]);
+  const [reducedList, setReducedList] = useState([]);
   const [showGames, setShowGames] = useState(false);
 
   const [search, setSearch] = useState(``);
@@ -82,7 +82,7 @@ function App() {
       <main>
         <Router>
           <Header
-            setReduceList={setReduceList}
+            setReducedList={setReducedList}
             setMainSearch={setMainSearch}
             getSearchList={getSearchList}
             setSearch={setSearch}
@@ -104,7 +104,7 @@ function App() {
             />
             <Route path="/*" element={<PageNotFound />} />
 
-            <Route path="/:id" element={<GameList />} />
+            <Route path="/gamelist/:id" element={<GameList />} />
             <Route
               path="/search"
               element={

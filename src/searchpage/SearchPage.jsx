@@ -78,7 +78,7 @@ export default function SearchPage({
                             src={list[element.storeID]}
                             alt=""
                           />{" "}
-                          <h3>{names[element.storeID]}</h3>
+                          <h4>{names[element.storeID]}</h4>
                           <span>${element.salePrice}</span>
                         </div>
                       </a>

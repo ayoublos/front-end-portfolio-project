@@ -15,8 +15,8 @@ export default function Header({setReducedList,getSearchList,setSearch,search,al
           <h2 className="title">Game Guru</h2>
         </Link>
         <Link to={'/'}><h3>Home</h3></Link>
-        
-        <h3>About</h3>
+        <Link to={'/about'}> <h3>About</h3>
+</Link>
         <Search setReducedList={setReducedList}setMainSearch={setMainSearch} getSearchList={getSearchList} setSearch={setSearch}search={search}allGames={allGames}/>
       </div>
     </div>

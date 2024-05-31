@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "./header/Header";
 import SearchPage from "./searchpage/SearchPage";
+import About from "./about/About";
 
 function App() {
   const [steamList, setSteamList] = useState([]);
@@ -117,6 +118,7 @@ function App() {
                 />
               }
             />
+            <Route path="/about" element={<About/>}/>
           </Routes>
         </Router>
       </main>

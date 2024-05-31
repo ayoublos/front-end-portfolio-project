@@ -36,6 +36,7 @@ export default function Search({ setReducedList,setSearch,getSearchList,search,a
       setReducedList(reduceListToEachElementOnce(result))
    
       navigate(`./search`)}
+      setSearch(``)
   
 
   }

@@ -13,7 +13,7 @@ export default function HumbleStore({ humbleStoreList }) {
       />
       <ul>
         {firstFiveGames.map((game) => (
-          <a href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
+          <a target="_blank"  href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
             <li>
               <p className="gametitle">
                 {game.title.length > 30

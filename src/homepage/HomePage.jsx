@@ -10,7 +10,7 @@ export default function HomePage({
   greenManList,
   gameBilletList,
 }) {
-  // const [change,setChange]=useState(false)
+  const [change,setChange]=useState(false)
   function changeLetters(e) {
     let iteration = 0;
     let value = "TOP DEALS BY STORE";
@@ -30,8 +30,8 @@ export default function HomePage({
       }
     }, 50);
 
-    //
-    // setChange(false)
+    
+    setChange(false)
   }
   //   function changeL(e){
   //     let iteration=0
@@ -53,7 +53,7 @@ export default function HomePage({
   const letters = "abcdefghijklmnopqrstuvwxyz";
   return (
     <>
-      <h1 className="heading" onMouseOver={changeLetters}>
+      <h1  className="heading" onMouseOver={changeLetters}>
         {" "}
         TOP DEALS BY STORE
       </h1>

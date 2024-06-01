@@ -11,7 +11,7 @@ export default function SteamPage({ steamList }) {
       <img src="https://images.alphacoders.com/133/1339887.png" alt="" />
       <ul>
         {firstFiveGames.map((game) => (
-          <a href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
+          <a target="_blank" href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
             <li className="list-element">
               <p className="gametitle">
                 {game.title.length > 30

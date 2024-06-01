@@ -8,7 +8,7 @@ export default function GameBillet({ gameBilletList }) {
       <img src="https://cdn.gadevo.com/images/lojas/gamebillet.png" alt="" />
       <ul>
         {firstFiveGames.map((game) => (
-          <a href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
+          <a target="_blank"  href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}>
             <li>
               {" "}
               <p className="gametitle">

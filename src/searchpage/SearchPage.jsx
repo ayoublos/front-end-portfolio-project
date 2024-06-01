@@ -68,7 +68,7 @@ export default function SearchPage({
                   .filter((element) => element.title === el.title)
                   .map((element) =>
                     showGames && title === element.title ? (
-                      <a
+                      <a target="_blank" 
                         href={`https://www.cheapshark.com/redirect?dealID=${element.dealID}`}
                       >
                         <div className="secondlist-item">

@@ -143,7 +143,7 @@ export default function GameList() {
         filterGameList={filterGameList}
         setGameListSearchWord={setGameListSearchWord}
       />
-      
+
       <table>
         <thead>
           <tr>
@@ -224,5 +224,5 @@ export default function GameList() {
         </tbody>
       </table>
     </div>
-);
+  );
 }

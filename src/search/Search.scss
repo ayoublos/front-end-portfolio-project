@@ -6,5 +6,8 @@
         width: 15vw;
         padding-left: 1vw;
     }
+    input::placeholder {
+        font-size: 1vw; 
+      }
 
 }

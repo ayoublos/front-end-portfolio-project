@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./HomePage.scss";
 import GameBillet from "./gamebillet/GameBillet";
 import GreenManGaming from "./greenmangaming/GreenManGaming";
@@ -8,37 +9,60 @@ export default function HomePage({
   humbleStoreList,
   greenManList,
   gameBilletList,
-}) 
+}) {
+  // const [change,setChange]=useState(false)
+  function changeLetters(e) {
+    let iteration = 0;
+    let value = "TOP DEALS BY STORE";
 
-{
-  function changeLetters(e){
-    let iteration=0
-    let value='TOP DEALS BY STORE'
-    
-    const interval=setInterval(()=>{
-      
-    e.target.innerText=e.target.innerText.split(``).map((element,index)=>index<iteration?value[index]:letters[Math.floor(Math.random()*26)].toUpperCase()).join(``)
-  iteration++
-  if(iteration>value.length){
-    clearInterval(interval)
-  }
-  
-  },50)
+    const interval = setInterval(() => {
+      e.target.innerText = e.target.innerText
+        .split(``)
+        .map((element, index) =>
+          index < iteration
+            ? value[index]
+            : letters[Math.floor(Math.random() * 26)].toUpperCase()
+        )
+        .join(``);
+      iteration++;
+      if (iteration > value.length) {
+        clearInterval(interval);
+      }
+    }, 50);
 
+    //
+    // setChange(false)
   }
-  const letters='abcdefghijklmnopqrstuvwxyz'
+  //   function changeL(e){
+  //     let iteration=0
+  //     let value='NOT GOING TO STOPE'
+
+  //     const interval=setInterval(()=>{
+
+  //     e.target.innerText=e.target.innerText.split(``).map((element,index)=>index<iteration?value[index]:letters[Math.floor(Math.random()*26)].toUpperCase()).join(``)
+  //   iteration++
+  //   if(iteration>value.length){
+  //     clearInterval(interval)
+  //   }
+
+  //   },50)
+
+  //   //
+  // setChange(true)
+  //   }
+  const letters = "abcdefghijklmnopqrstuvwxyz";
   return (
     <>
-    <h1  className="heading" onMouseOver={changeLetters
-    }> TOP DEALS BY STORE</h1>
+      <h1 className="heading" onMouseOver={changeLetters}>
+        {" "}
+        TOP DEALS BY STORE
+      </h1>
       <div className="homepage-container">
-
-<SteamPage steamList={steamList} />
-<HumbleStore humbleStoreList={humbleStoreList} />
-<GreenManGaming greenManList={greenManList} />
-<GameBillet gameBilletList={gameBilletList} />
-</div>
+        <SteamPage steamList={steamList} />
+        <HumbleStore humbleStoreList={humbleStoreList} />
+        <GreenManGaming greenManList={greenManList} />
+        <GameBillet gameBilletList={gameBilletList} />
+      </div>
     </>
-  
   );
 }

@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import HomePage from "./homepage/HomePage";
 import GameList from "./gamelist/GameList";
-import PageNotFound from './pagenotfound/PageNotFound'
+import PageNotFound from "./pagenotfound/PageNotFound";
 
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -118,7 +118,7 @@ function App() {
                 />
               }
             />
-            <Route path="/about" element={<About/>}/>
+            <Route path="/about" element={<About />} />
           </Routes>
         </Router>
       </main>

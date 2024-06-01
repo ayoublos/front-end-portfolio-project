@@ -45,8 +45,7 @@ export default function SearchPage({
               <br />
 
               <div className="name-container">
-                <p>                {el.title}
-</p>
+                <p> {el.title}</p>
                 <button
                   onClick={() => {
                     toggleModal(el.title);
